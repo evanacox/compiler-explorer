@@ -14,6 +14,8 @@
 		2061F78B28621008001D29AA /* CompilerExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061F78A28621008001D29AA /* CompilerExplorerTests.swift */; };
 		2061F79528621008001D29AA /* CompilerExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061F79428621008001D29AA /* CompilerExplorerUITests.swift */; };
 		2061F79728621008001D29AA /* CompilerExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061F79628621008001D29AA /* CompilerExplorerUITestsLaunchTests.swift */; };
+		2061F7B428622934001D29AA /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061F7B328622934001D29AA /* Compiler.swift */; };
+		2061F7B9286273B8001D29AA /* TOMLDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 2061F7B8286273B8001D29AA /* TOMLDecoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 		2061F79028621008001D29AA /* CompilerExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompilerExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2061F79428621008001D29AA /* CompilerExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerExplorerUITests.swift; sourceTree = "<group>"; };
 		2061F79628621008001D29AA /* CompilerExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2061F7AA286224D7001D29AA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2061F7AB2862250E001D29AA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2061F7AC286225BA001D29AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2061F7B328622934001D29AA /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2061F7B9286273B8001D29AA /* TOMLDecoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +82,11 @@
 		2061F76C28621006001D29AA = {
 			isa = PBXGroup;
 			children = (
-				2061F77728621006001D29AA /* CompilerExplorer */,
-				2061F78928621008001D29AA /* CompilerExplorerTests */,
-				2061F79328621008001D29AA /* CompilerExplorerUITests */,
+				2061F7B5286271D9001D29AA /* Sources */,
+				2061F7B628627220001D29AA /* Tests */,
+				2061F7AA286224D7001D29AA /* LICENSE */,
+				2061F7AB2862250E001D29AA /* .gitignore */,
+				2061F7AC286225BA001D29AA /* README.md */,
 				2061F77628621006001D29AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,10 +104,12 @@
 		2061F77728621006001D29AA /* CompilerExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				2061F7A528621D45001D29AA /* Config */,
+				2061F7A428621C1B001D29AA /* Views */,
 				2061F77828621006001D29AA /* CompilerExplorerApp.swift */,
 				2061F77A28621006001D29AA /* ContentView.swift */,
-				2061F77C28621008001D29AA /* Assets.xcassets */,
 				2061F78128621008001D29AA /* CompilerExplorer.entitlements */,
+				2061F77C28621008001D29AA /* Assets.xcassets */,
 				2061F77E28621008001D29AA /* Preview Content */,
 			);
 			path = CompilerExplorer;
@@ -129,6 +140,38 @@
 			path = CompilerExplorerUITests;
 			sourceTree = "<group>";
 		};
+		2061F7A428621C1B001D29AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2061F7A528621D45001D29AA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2061F7B328622934001D29AA /* Compiler.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		2061F7B5286271D9001D29AA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2061F77728621006001D29AA /* CompilerExplorer */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2061F7B628627220001D29AA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2061F78928621008001D29AA /* CompilerExplorerTests */,
+				2061F79328621008001D29AA /* CompilerExplorerUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +188,9 @@
 			dependencies = (
 			);
 			name = CompilerExplorer;
+			packageProductDependencies = (
+				2061F7B8286273B8001D29AA /* TOMLDecoder */,
+			);
 			productName = CompilerExplorer;
 			productReference = 2061F77528621006001D29AA /* CompilerExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 2061F76C28621006001D29AA;
+			packageReferences = (
+				2061F7B7286273B8001D29AA /* XCRemoteSwiftPackageReference "TOMLDecoder" */,
+			);
 			productRefGroup = 2061F77628621006001D29AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2061F77B28621006001D29AA /* ContentView.swift in Sources */,
+				2061F7B428622934001D29AA /* Compiler.swift in Sources */,
 				2061F77928621006001D29AA /* CompilerExplorerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2061F7B7286273B8001D29AA /* XCRemoteSwiftPackageReference "TOMLDecoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dduan/TOMLDecoder";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2061F7B8286273B8001D29AA /* TOMLDecoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2061F7B7286273B8001D29AA /* XCRemoteSwiftPackageReference "TOMLDecoder" */;
+			productName = TOMLDecoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2061F76D28621006001D29AA /* Project object */;
 }
